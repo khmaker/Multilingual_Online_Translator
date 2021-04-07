@@ -35,6 +35,9 @@ class Translator:
             if lang not in self.LANGUAGES:
                 self.message = f'Sorry, the program doesn\'t support {lang}'
                 self.exit_translator()
+        if self.language_from == 'all':
+            self.message = f'Sorry, the program doesn\'t support {lang}'
+            self.exit_translator()
 
     def translate(self):
         languages_to_process = (self.LANGUAGES - {'all', self.language_from}
